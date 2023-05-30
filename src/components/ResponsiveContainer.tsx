@@ -1,9 +1,9 @@
 // ResponsiveContainer.tsx
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import Container from '@mui/material/Container';
 
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 interface ResponsiveContainerProps {
     children: React.ReactNode;
@@ -11,7 +11,7 @@ interface ResponsiveContainerProps {
 
 const ResponsiveContainer = ({ children }: ResponsiveContainerProps) => {
     const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const matchesSM = useMediaQuery(theme.breakpoints.up('sm'));
 
     return (
         <Container
@@ -26,7 +26,7 @@ const ResponsiveContainer = ({ children }: ResponsiveContainerProps) => {
                 minHeight: '100vh', // this will make sure the container is always full height
                 backgroundColor: theme.palette.background.default,
                 color: theme.palette.text.primary,
-                paddingTop: isSmallScreen ? theme.spacing(4) : theme.spacing(8), // Adjust the top padding based on screen size
+                paddingTop: matchesSM ? theme.spacing(8) : theme.spacing(2), // Adjust the top padding based on the screen size
             }}
         >
 
