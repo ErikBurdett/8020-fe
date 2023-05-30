@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme/theme';
 import AppBar from '@mui/material/AppBar';

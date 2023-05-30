@@ -1,8 +1,7 @@
-import React from 'react';
 import  useEmblaCarousel  from 'embla-carousel-react';
 import '../index.css';
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
-import CarouselCard from './CarouselCard';
+
 
 const EmblaCarousel = () => {
   const [emblaRef] = useEmblaCarousel();
