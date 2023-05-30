@@ -1,4 +1,3 @@
-// TopNav.tsx
 import React, { useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme/theme';
@@ -36,13 +35,13 @@ const TopNav = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6">
+                    <Typography variant="h6" sx={{ flexGrow: 1 }}>
                         Your Logo
                     </Typography>
-                    <Button color="inherit">Home</Button>
-                    <Button color="inherit">About</Button>
-                    <Button color="inherit">Services</Button>
-                    <Button color="inherit">Contact</Button>
+                    <Button color="inherit" sx={{ display: { xs: 'none', sm: 'block' } }}>Home</Button>
+                    <Button color="inherit" sx={{ display: { xs: 'none', sm: 'block' } }}>About</Button>
+                    <Button color="inherit" sx={{ display: { xs: 'none', sm: 'block' } }}>Services</Button>
+                    <Button color="inherit" sx={{ display: { xs: 'none', sm: 'block' } }}>Contact</Button>
                 </Toolbar>
             </AppBar>
             <Drawer anchor="left" open={openDrawer} onClose={handleDrawerClose}>

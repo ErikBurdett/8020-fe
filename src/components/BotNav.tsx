@@ -1,31 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from '../theme/theme';
-import Box from '@mui/material/Box';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import theme from '../theme/theme';
 
 const BotNav = () => {
+    const [openDrawer, setOpenDrawer] = useState(false);
+
+    const handleDrawerOpen = () => {
+        setOpenDrawer(true);
+    };
+
+    const handleDrawerClose = () => {
+        setOpenDrawer(false);
+    };
+
     return (
         <ThemeProvider theme={theme}>
-            <Box
-                component="footer"
-                sx={(theme) => ({
-                    py: 2,
-                    px: 3,
-                    backgroundColor: theme.palette.secondary.main,
-                    color: theme.palette.common.white,
-                    [theme.breakpoints.up('sm')]: {
-                        px: 4,
-                    },
-                    [theme.breakpoints.up('lg')]: {
-                        px: 5,
-                    },
-                })}
-            >
-                <Typography variant="body1" component="div">
-                    Footer content
-                </Typography>
-            </Box>
+            <AppBar position="fixed" color="secondary" sx={{top: 'auto', bottom: 0}}>
+                <Toolbar>
+                    <IconButton
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        onClick={handleDrawerOpen}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" sx={{ flexGrow: 1 }}>
+                        Your Logo
+                    </Typography>
+                    <Button color="inherit">Home</Button>
+                    <Button color="inherit">About</Button>
+                    <Button color="inherit">Services</Button>
+                    <Button color="inherit">Contact</Button>
+                </Toolbar>
+            </AppBar>
+            <Drawer anchor="left" open={openDrawer} onClose={handleDrawerClose}>
+                <List>
+                    <ListItem button>
+                        <ListItemText primary="Home" />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemText primary="About" />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemText primary="Services" />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemText primary="Contact" />
+                    </ListItem>
+                </List>
+            </Drawer>
         </ThemeProvider>
     );
 };

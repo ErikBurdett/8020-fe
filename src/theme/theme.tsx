@@ -11,41 +11,35 @@ const theme = createTheme({
     },
   },
   palette: {
+    mode: 'dark',
     primary: {
-      main: '#40B36A',
-      light: '#399564',
-      dark: '#368A65',
-    },
-    secondary: {
-      main: '#F5B725',
-      light: '#F5B725',
-      dark: '#ED9121',
-    },
-    info: {
-      main: '#E67A3C', // previously extraDark
+      main: '#E36905', // Orange
     },
     text: {
       primary: '#ffffff',
     },
     background: {
-      default: '#368A65',
-    },
-  },
-  typography: {
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    button: {
-      textTransform: 'none',
+      default: '#000000', // Black background
+      paper: '#121212',
     },
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: '#E67A3C', // use the info.main color for all buttons
+          backgroundColor: '#E36905', // use the primary.main color for all buttons
           '&:hover': {
-            backgroundColor: '#ED9121', 
+            backgroundColor: '#B15604', // Darken on hover
           },
-          color: '#ffffff', 
+          color: '#ffffff', // White text
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#000000', // Black AppBar
+          color: '#ffffff', // White text
         },
       },
     },
