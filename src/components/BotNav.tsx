@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,9 +10,13 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import theme from '../theme/theme';
+import { lightTheme, darkTheme } from '../theme/theme';
 
-const BotNav = () => {
+interface BotNavProps {
+    isDarkMode: boolean;
+  }
+
+const BotNav: React.FC<BotNavProps> = ({ isDarkMode }) => {
     const [openDrawer, setOpenDrawer] = useState(false);
 
     const handleDrawerOpen = () => {
@@ -24,7 +28,7 @@ const BotNav = () => {
     };
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
             <AppBar position="fixed" color="secondary" sx={{top: 'auto', bottom: 0}}>
                 <Toolbar>
                     <IconButton

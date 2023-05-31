@@ -1,7 +1,7 @@
 // App.tsx
 import ResponsiveContainer from './components/ResponsiveContainer';
 import { ThemeProvider } from '@mui/material/styles';
-import { lightTheme, theme } from './theme/theme.tsx';
+import { lightTheme, darkTheme } from './theme/theme.tsx';
 import { CssBaseline } from '@mui/material';
 import TopNav from './components/TopNav.tsx';
 import BotNav from './components/BotNav.tsx';
@@ -11,22 +11,22 @@ import Spacer from './components/Spacer.tsx';
 import { useState } from 'react';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
+    setDarkMode(!darkMode);
   };
 
   return (
-    <ThemeProvider theme={isDarkMode ? theme : lightTheme}>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline />
       <ResponsiveContainer>
-        <TopNav onThemeToggle={toggleTheme} isDarkMode={isDarkMode}/>
+        <TopNav onThemeToggle={toggleTheme} isDarkMode={darkMode}/>
         <EmblaCarouselComponent/>
         <Spacer size={1} />
-        <CardList />
+        <CardList isDarkMode={darkMode} />
         <Spacer size={1} />
-        <CardList />
+        <CardList isDarkMode={darkMode} />
         <Spacer size={1} />
         <BotNav />
       </ResponsiveContainer>
