@@ -24,8 +24,8 @@ const ResponsiveContainer = ({ children }: ResponsiveContainerProps) => {
                 alignItems: 'center',
                 justifyItems: 'center',
                 minHeight: '100vh', // this will make sure the container is always full height
-                backgroundColor: theme.palette.background.default,
-                color: theme.palette.text.primary,
+                // backgroundColor: theme.palette.background.default,
+                // color: theme.palette.text.primary,
                 paddingTop: matchesSM ? theme.spacing(8) : theme.spacing(2), // Adjust the top padding based on the screen size
             }}
         >

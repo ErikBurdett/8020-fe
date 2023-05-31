@@ -28,7 +28,7 @@ function App() {
         <Spacer size={1} />
         <CardList isDarkMode={darkMode} />
         <Spacer size={1} />
-        <BotNav />
+        <BotNav isDarkMode={darkMode} />
       </ResponsiveContainer>
     </ThemeProvider>
   );
