@@ -8,6 +8,7 @@ import BotNav from './components/BotNav.tsx';
 import EmblaCarouselComponent from './components/EmblaCarousel.tsx';
 import CardList from './components/CardList.tsx';
 import Spacer from './components/Spacer.tsx';
+import OrdersTable from './components/OrdersTable.tsx';
 import { useState } from 'react';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Spacer size={1} />
         <CardList isDarkMode={darkMode} />
         <Spacer size={1} />
+        <OrdersTable isDarkMode={darkMode} />
         <BotNav isDarkMode={darkMode} />
       </ResponsiveContainer>
     </ThemeProvider>
